@@ -6,9 +6,6 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   background: linear-gradient(to Top Right, yellow, orange);
 }
@@ -17,12 +14,14 @@ li {
 }
 
 .container {
-    visibility: hidden;
+  visibility: hidden;
   width: 300px;
   border-radius: 5px;
   background: #fefefe;
   padding: 15px 10px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  /* to use offsets we should give absolut then we can set left and top in js as offsetx and y */
+  position: absolute;
 }
 .container .menu {
   padding: 2px 10px;
@@ -42,4 +41,24 @@ li {
   border-top: 1px solid #ccc;
   margin-top: 5px;
   padding-top: 5px;
+}
+.menu .share {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu .share .share-menu {
+  position: absolute;
+  left: 260px;
+  top: 0;
+  width: 170px;
+  background: #fefefe;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border-radius: 10px;
+  padding: 10px 5px;
+  visibility: hidden;
+}
+.menu .share:hover .share-menu {
+  visibility: visible;
 }
